@@ -8,6 +8,10 @@
 	<version>1.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<properties>
+		<api.level>17</api.level>
+	</properties>
+	
 	<modules>
 		<module>library</module>
 		<module>library-maps-support</module>
@@ -15,16 +19,10 @@
 
 	<dependencyManagement>
 		<dependencies>
-            <dependency>
-                <groupId>com.jeremyfeinstein.slidingmenu</groupId>
-                <artifactId>slidingmenu</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
 			<dependency>
 				<groupId>com.google.android</groupId>
 				<artifactId>android</artifactId>
-				<version>4.1.1.4</version>
+				<version>4.2.2</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.android.maps</groupId>
@@ -32,9 +30,9 @@
 				<version>17_r1</version>
 			</dependency>
 			<dependency>
-				<groupId>com.google.android</groupId>
-				<artifactId>support-v4</artifactId>
-				<version>r7</version>
+				<groupId>android.support</groupId>
+				<artifactId>compatibility-v4</artifactId>
+				<version>11</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -49,7 +47,7 @@
 
 					<configuration>
 						<sdk>
-							<platform>16</platform>
+							<platform>${api.level}</platform>
 						</sdk>
 						<undeployBeforeDeploy>true</undeployBeforeDeploy>
 					</configuration>
